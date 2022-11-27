@@ -3,7 +3,11 @@ function profilData() {
     document.getElementById("passReturn").textContent = document.getElementById("password").value;
     document.getElementById("ageReturn").textContent = document.getElementById("age").value;
     document.getElementById("nemReturn").textContent=document.getElementById("nem").value;
-    document.getElementById("colorReturn").textContent = document.querySelector('input[name="color"]:checked').value;
+    document.getElementById("colorReturn").textContent = document.getElementsByName("color").reduce(function(value, checkable) {
+    if(checkable.checked == true) 
+        value = checkable.value; 
+    return value;
+    }, '');
 }
 
 function calculator() {
