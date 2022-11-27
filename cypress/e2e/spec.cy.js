@@ -12,14 +12,14 @@ describe('Website is Visitable', () => {
 describe('Contains creator', () => {
   it('Visits website and find creator', () => {
     cy.visit('localhost:3000')
-    cy.contains('Kardos Zsolt')
+    cy.contains('Galvács István')
   })
 })
 
 describe('Contains creators NC', () => {
   it('Visits website and finds Neptun Code', () => {
     cy.visit('http://localhost:3000')
-    cy.contains('O48WRX')
+    cy.contains('JHPIPM')
   })
 })
 
@@ -30,19 +30,20 @@ describe('Form submit clickable', () => {
   })
 })
 
-describe('Calcform submit clickable', () => {
+describe('Calculatorform submit clickable', () => {
   it('Finds and Clicks calcform submit button', () => {
     cy.visit('localhost:3000')
-    cy.get('button[id="submitcalcform"]').click()
+    cy.get('button[id="submitcalculatorform"]').click()
   })
 })
 
 describe('Submitting the form', () => {
   it('Finds and types in data into the form', () => {
     cy.visit('localhost:3000')
-    cy.get('input[id="name"]').type('Teszt Elek')
-    cy.get('input[id="password"]').type('asd12')
-    cy.get('input[id="age"]').type(32)
+    cy.get('input[id="name"]').type('Teszt')
+    cy.get('input[id="password"]').type('alma123')
+    cy.get('input[id="age"]').type(20)
+    cy.get('select').select('férfi')
     cy.get('button[id="submitform1"]').click()
   })
 })
@@ -50,39 +51,46 @@ describe('Submitting the form', () => {
 describe('Submitting the form and validating', () => {
   it('Finds and types in data into the form', () => {
     cy.visit('localhost:3000')
-    cy.get('input[id="name"]').type('Teszt Elek')
-    cy.get('input[id="password"]').type('asd12')
-    cy.get('input[id="age"]').type(32)
+    cy.get('input[id="name"]').type('Teszt')
+    cy.get('input[id="password"]').type('alma123')
+    cy.get('input[id="age"]').type(20)
+    cy.get('select').select('férfi')
     cy.get('button[id="submitform1"]').click()
 
 
-    cy.contains('Name: Teszt Elek')
-    cy.contains('Password: asd12')
-    cy.contains('Age: 32')
+    cy.contains('Név: Teszt')
+    cy.contains('Jelszó: alma123')
+    cy.contains('Életkor: 20')
+    cy.contains('Nem: férfi')
   })
 })
 
-describe('Submitting the Calc form', () => {
+describe('Submitting the Calculator form', () => {
   it('Finds and types in data into the form', () => {
     cy.visit('localhost:3000')
-    cy.get('input[id="num1"]').type(3)
+    cy.get('input[id="num1"]').type(5)
     cy.get('input[id="num2"]').type(2)
-    cy.get('input[id="num3"]').type(4)
-    cy.get('input[id="num4"]').type(2)
-    cy.get('button[id="submitcalcform"]').click()
+    cy.get('input[id="num3"]').type(3)
+    cy.get('input[id="num4"]').type(1)
+    cy.get('input[id="num5"]').type(2)
+    cy.get('input[id="num6"]').type(10)
+    cy.get('button[id="submitcalculatorform"]').click()
   })
 })
 
-describe('Submitting the Calc form and validating', () => {
+describe('Submitting the Calculator form and validating', () => {
   it('Finds and types in data into the form', () => {
     cy.visit('localhost:3000')
-    cy.get('input[id="num1"]').type(3)
+    cy.get('input[id="num1"]').type(5)
     cy.get('input[id="num2"]').type(2)
-    cy.get('input[id="num3"]').type(4)
-    cy.get('input[id="num4"]').type(2)
-    cy.get('button[id="submitcalcform"]').click()
+    cy.get('input[id="num3"]').type(3)
+    cy.get('input[id="num4"]').type(1)
+    cy.get('input[id="num5"]').type(2)
+    cy.get('input[id="num6"]').type(10)
+    cy.get('button[id="submitcalculatorform"]').click()
 
-    cy.contains(5)
+    cy.contains(7)
     cy.contains(2)
+    cy.contains(20);
   })
 })
