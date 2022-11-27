@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript cypress</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/teszt.js"></script>
+    </head>
+    <body>
+        <h1>Ez egy teszt HTML weboldal - Galvács István NK:JHPIPM</h1>
+        <h2>
+            Profil Adatok:
+        </h2>
+        <form>
+            Név : <input type="text" id="name" value=""><br>
+            Jelszó: : <input type="text" id="password" value=""><br>
+            Életkor : <input type="number" id="age" value=""><br>
+            Nem :<select id="nem" name="nem">
+                <option value="no">Nő</option>
+                <option value="ferfi">Férfi</option>
+                <option value="egyeb">Egyéb</option>
+                </select><br>
+            <button type="button" id="submitform1" onclick="profilData()">Submit</button>
+        </form>
+        <br>
+        
+        <p>
+            Név: <label id="nameReturn"></label><br>
+            Jelszó: <label id="passReturn"></label><br>
+            Életkor: <label id="ageReturn"></label><br>
+            Nem: <label id="nemReturn"></label><br>
+        </p>
+
+        <br>
+        <h1>
+            Javascript teszt
+        </h1>
+        <form>
+            <input type="number" id="num1"> + <input type="number" id="num2"> = <label id="additionResult"></label><br>
+            <input type="number" id="num3"> - <input type="number" id="num4"> = <label id="subtractionResult"></label><br>
+            <input type="number" id="num5"> * <input type="number" id="num6"> = <label id="multiResult"></label><br>
+            <button type="button" id="submitcalcform" onclick="calculator()">Submit</button>
+        </form>
+    </body>
+</html>
