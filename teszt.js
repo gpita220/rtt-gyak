@@ -19,6 +19,6 @@ function calculator() {
     document.getElementById("additionResult").textContent = parseInt(a) + parseInt(b);
     document.getElementById("subtractionResult").textContent = parseInt(c) - parseInt(d);
     document.getElementById("multiResult").textContent=parseInt(e) * parseInt(f);
-    document.getElementById("divisionResult").textContent = parseFloat(g) % parseFloat(h);
+    document.getElementById("divisionResult").textContent = parseFloat(g) / parseFloat(h);
 
 }
